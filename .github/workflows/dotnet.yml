@@ -23,6 +23,12 @@ jobs:
       run: nuget restore HclNextGenSocialGoal.sln
     - name: Build solution
       run: msbuild HclNextGenSocialGoal.sln -t:rebuild -property:Configuration=Release
+    - name: Run tests
+      uses: microsoft-approved-actions/vstest@master
+      with:
+        testAssembly: HclNextGenSocialGoal.Tests*.dll
+        searchFolder: ./tests/
+        runInParallel: true
     - uses: actions/upload-artifact@v3
       with:
         name: artifact
