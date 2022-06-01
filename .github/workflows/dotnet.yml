@@ -23,3 +23,9 @@ jobs:
       run: nuget restore HclNextGenSocialGoal.sln
     - name: Build solution
       run: msbuild HclNextGenSocialGoal.sln -t:rebuild -property:Configuration=Release
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v1
+      with:
+        name: my-artifact
+        path: my-artifact
+      
