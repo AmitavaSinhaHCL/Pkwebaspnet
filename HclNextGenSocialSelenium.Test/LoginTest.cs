@@ -20,7 +20,7 @@ namespace HclNextGenSocialSelenium.Test
             //var path = @"C:\SeleniumDriver";
             var options = new ChromeOptions();
             options.AddArguments("--no-sandbox");
-
+            //If Satisfied
             if (!string.IsNullOrWhiteSpace(path))
             {
                 return new ChromeDriver(path, options, TimeSpan.FromSeconds(300));
